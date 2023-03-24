@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="RGZIS.Site1" %>
+
+<!DOCTYPE html>
+ <style>
+*{
+    padding: 0%;
+    margin: 0%;
+}
+#grid1 { 
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1vw;
+  }
+#grid1 > div {
+  text-align: center;
+  height: 100px;
+}
+.column {
+    width: 25%;
+    min-height: 30px;
+    float:left;
+    border-color:#808080;
+    border-style:solid;
+    border-width: 2px;
+    background-color:white;
+}
+.column a{
+    display: block; 
+    text-decoration: none;
+    margin-top:2%;
+}
+.resdiv{
+    position: absolute;
+    left:18%;
+    height:80px; 
+    width:1000px;
+    margin-top:90px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(179, 157, 148, 0.85);
+}
+.hr {
+    margin-left: 30px; 
+   }
+.hrli {
+    display: inline; 
+    margin-right: 20px;
+    line-height: 80px;
+   }
+.text{
+    display: block; 
+    text-decoration: none;
+    font-size: 100%; 
+    font-family: Arial;
+    color:black;
+}
+</style>
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+            <div style="border-bottom: 3px solid #808080; position:relative;">
+                <div id="grid1">
+                    <div>
+                        <a runat="server" href="~/Default.aspx"><img style="height: 92px; width: 178px" src="unnamed.jpg"/></a>
+                    </div>
+                    <div>
+                        <img style="position:relative; top:15px; height: 42px; width: 48px" src="location.png"/>
+                        <text style="position:relative; top:5px; font-size: 110%; font-family: 'Arial';">Москва, ул. Ленинградская, 18</text>
+                                           
+                    </div>
+                    <div>
+                        <img style="position:relative; top:15px; height: 33px; width: 37px" src="phone.png"/>
+                        <text style="margin-left:10px; position:relative; top:5px; font-size: 110%; font-family: 'Arial';">+7 (913) 423-23-23</text>
+                    </div>
+                </div>
+                <div style="background: url(restoran.jpg) 100% 100% no-repeat; background-size:cover; height:270px;">
+                <div class="resdiv">
+                    <ul class="hr">
+                    <li class="hrli">
+                        <text style="color:#ffffff; font-size: 140%; font-family: 'Arial'; font-weight: normal;">Бронирование номеров</text>
+                    </li>
+                    <li class="hrli">
+                        <text style="color:#ffffff; font-size: 110%; font-family: 'Arial'; margin-right:5px;">Заезд</text>
+                        <asp:TextBox ID="TextBox1" runat="server" textmode="Date" Font-Names="Arial" Height="24px"></asp:TextBox>
+                    </li>
+                    <li class="hrli">
+                        <text style="color:#ffffff; font-size: 110%; font-family: 'Arial'; margin-right:5px;">Выезд</text>
+                        <asp:TextBox ID="TextBox2" runat="server" textmode="Date" Font-Names="Arial" Height="24px"></asp:TextBox>
+                    </li>
+                    <li class="hrli">
+                        <asp:Button ID="Button1" runat="server" Text="Найти номер" BackColor="#CC3300" BorderStyle="Double" Font-Names="Arial" Height="32px" Width="192px" ForeColor="White" Font-Size="Medium" OnClick="Button1_Click" />
+                    </li>
+                    </ul>
+                </div>
+                <div style="position:absolute; width:74%; bottom:0px; left:22%; text-align:center;">
+                    <div class="column"><a runat="server" href="~/WebForm2.aspx"><text class="text">Номера и цены</text></a>
+                    </div>
+                    <div class="column"><a runat="server" href="~/WebForm3.aspx"><text class="text">Бронирование</text></a>
+                    </div>
+                    <div class="column"><a runat="server" href="~/WebForm4.aspx"><text class="text">Услуги</text></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div style="background:#e9e8e4">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div style="background:#807975;">
+                <div id="grid1">
+                    <div>
+                        <img style="position:relative; top:18px; height: 36px; width: 22px;" src="loc.png"/>
+                        <text style="color:#ffffff; margin-left:20px; position:relative; top:5px; font-size: 110%; font-family: 'Arial';">Москва, ул. Ленинградская, 18</text>
+                                           
+                    </div>
+                    <div>
+                        <img style="position:relative; top:15px; height: 33px; width: 37px" src="t2.png"/>
+                        <text style="color:#ffffff; margin-left:10px; position:relative; top:5px; font-size: 110%; font-family: 'Arial';">+7 (913) 423-23-23</text>
+                    </div>
+                    <div>
+                        <img style="position:relative; top:15px; height: 33px; width: 37px" src="mail.png"/>
+                        <text style="color:#ffffff; margin-left:10px; position:relative; top:5px; font-size: 110%; font-family: 'Arial';">info@radisson.ru</text>
+                    </div>
+                </div>
+            </div>
+    </form>
+</body>
+</html>
